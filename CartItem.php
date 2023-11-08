@@ -8,7 +8,7 @@ class CartItem{
      * @param Product $product
      * @param int  $quantity
      */
-    public function __construct(\Product $product,  $quantity){
+    public function __construct(Product $product,  $quantity){
         $this->product = $product;
         $this->quantity = $quantity;
     }
@@ -20,7 +20,7 @@ class CartItem{
     {
         $this->product = $product;
     }
-    public function getQuantity(): int
+    public function getQuantity()
     {
         return $this->quantity;
     }
@@ -33,7 +33,7 @@ class CartItem{
     public function increaseQuantity($amount=1){
         if ($this->getQuantity() + $amount > $this->getProduct()->getAvailableQuantity())
         {
-             throw new \Exception("HHHHH");
+             throw new \Exception("Product quantity can not be more than".$this->getProduct()->getAvailableQuantity());
         }
         $this->quantity += $amount;
 

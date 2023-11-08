@@ -20,7 +20,7 @@ class Product{
      */
     public function addToCart(Cart $cart, int $quantity)
     {
-        //TODO Implement method
+      return $cart->addProduct($this, $quantity);
     }
 
     /**
